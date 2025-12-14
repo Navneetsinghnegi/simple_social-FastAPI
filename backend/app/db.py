@@ -1,6 +1,7 @@
 from collections.abc import AsyncGenerator
 import uuid
-
+import os
+from dotenv import load_dotenv
 from sqlalchemy import Column, String, Text, DateTime, ForeignKey
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
@@ -9,7 +10,9 @@ from datetime import datetime
 from fastapi_users.db import SQLAlchemyUserDatabase, SQLAlchemyBaseUserTableUUID
 from fastapi import Depends
 
-DATABASE_URL = "sqlite+aiosqlite:///./test.db"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 
 class Base(DeclarativeBase):

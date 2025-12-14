@@ -47,7 +47,7 @@ async def upload_file(
                     use_unique_file_name=True,
                     tags=["backend-upload"]
                 )
-            )
+        )
 
         if upload_result.response_metadata.http_status_code == 200:
             post = Post(

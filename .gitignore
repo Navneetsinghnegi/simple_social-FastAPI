@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Database
+*.db
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db

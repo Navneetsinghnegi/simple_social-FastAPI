@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, File, UploadFile, Form, Depends
 from app.schemas import PostCreate, PostResponse, UserRead, UserCreate, UserUpdate
 from app.db import Post, create_db_and_tables, get_async_session, User
 from sqlalchemy.ext.asyncio import AsyncSession
+from imagekitio.models import UploadFileRequestOptions
 from contextlib import asynccontextmanager
 from sqlalchemy import select
 from app.images import imagekit
@@ -39,12 +40,14 @@ async def upload_file(
             temp_file_path = temp_file.name
             shutil.copyfileobj(file.file, temp_file)
 
-        upload_result = imagekit.upload(
-            file=open(temp_file_path, "rb"),
-            file_name=file.filename,
-            use_unique_file_name=True,
-            tags=["backend-upload"]  
-        )
+        upload_result = imagekit.upload_file(
+                file=open(temp_file_path, "rb"),
+                file_name=file.filename,
+                options=UploadFileRequestOptions(
+                    use_unique_file_name=True,
+                    tags=["backend-upload"]
+                )
+            )
 
         if upload_result.response_metadata.http_status_code == 200:
             post = Post(

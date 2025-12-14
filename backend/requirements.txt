@@ -5,5 +5,5 @@ asyncpg
 fastapi-users[sqlalchemy]
 python-dotenv
 python-multipart
-imagekitio
+imagekitio==4.1.1
 psycopg2-binary

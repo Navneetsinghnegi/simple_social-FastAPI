@@ -156,3 +156,4 @@ else:
 
     page = st.sidebar.radio("Navigate", ["🏠 Feed", "📸 Upload"])
     feed_page() if page == "🏠 Feed" else upload_page()
+

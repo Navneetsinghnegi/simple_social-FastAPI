@@ -6,3 +6,4 @@ fastapi-users[sqlalchemy]
 python-dotenv
 python-multipart
 imagekitio
+psycopg2-binary

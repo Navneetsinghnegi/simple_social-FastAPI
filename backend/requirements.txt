@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+asyncpg
+fastapi-users[sqlalchemy]
+python-dotenv
+python-multipart
+imagekitio

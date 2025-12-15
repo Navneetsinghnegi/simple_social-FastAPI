@@ -46,11 +46,6 @@ Built using modern backend, database, and cloud technologies.
 ---
 
 ## 📐 Architecture
-Streamlit (Frontend)
-↓
-FastAPI (Render)
-↓
-PostgreSQL
-↓
-ImageKit
+Streamlit (Frontend) --> FastAPI (Render) --> PostgreSQL --> ImageKit
+
 
